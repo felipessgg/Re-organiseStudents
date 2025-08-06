@@ -2,4 +2,6 @@
 comment0.target=StudentMarkManager
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=mark
+comment2.target=double\ parseMark(java.lang.String)
+numComments=3
