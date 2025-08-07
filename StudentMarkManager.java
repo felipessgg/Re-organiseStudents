@@ -1,11 +1,47 @@
 /**
- * Write a description of class StudentMarkManager here.
+ * Assessment 2 - Fundamentals of Programming
  *
  * @author Felipe Sepulveda
  * @version v1
  */
 import java.io.*;
 import java.util.*;
+
+// Class Person using Abstraction
+abstract class Person {
+    protected String name;
+    protected String id;
+    
+    public Person(String name, String id){
+        this.name = name;
+        this.id = id;
+    }
+    
+    public abstract void printInfo();
+}
+
+// Student class with marks using Inheritance, Encapsulation, and Polymorphism
+class Student extends Person {
+    private double mark1;
+    private double mark2;
+    private double mark3;
+
+    public Student(String name, String id, double mark1, double mark2, double mark3) {
+        super(name, id);
+        this.mark1 = mark1;
+        this.mark2 = mark2;
+        this.mark3 = mark3;
+    }
+
+    public double getTotal() {
+        return mark1 + mark2 + mark3;
+    }
+    
+    @Override
+    public void printInfo() {
+        System.out.println(name + " (" + id + ") - Total: " + getTotal());
+    }
+}
 
 public class StudentMarkManager {
     public static void main(String[] args) {
@@ -53,30 +89,5 @@ public class StudentMarkManager {
         } catch (Exception e) {
             return 0.0;
         }
-    }
-}
-
-// Student class with marks
-class Student {
-    private String name;
-    private String id;
-    private double mark1;
-    private double mark2;
-    private double mark3;
-
-    public Student(String name, String id, double mark1, double mark2, double mark3) {
-        this.name = name;
-        this.id = id;
-        this.mark1 = mark1;
-        this.mark2 = mark2;
-        this.mark3 = mark3;
-    }
-
-    public double getTotal() {
-        return mark1 + mark2 + mark3;
-    }
-
-    public void printInfo() {
-        System.out.println(name + " (" + id + ") - Total: " + getTotal());
     }
 }

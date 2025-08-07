@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=StudentMarkManager
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=mark
-comment2.target=double\ parseMark(java.lang.String)
-numComments=3
+comment1.params=name\ id
+comment1.target=Person(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ printInfo()
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment4.params=mark
+comment4.target=double\ parseMark(java.lang.String)
+numComments=5
