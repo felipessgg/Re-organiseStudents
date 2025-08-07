@@ -86,7 +86,7 @@ public class StudentMarkManager {
         }
         
         Scanner scanner = new Scanner(System.in);
-        int option;
+        int option = 0;
         
         do{
             System.out.println("\n===== MENU =====");
@@ -94,7 +94,13 @@ public class StudentMarkManager {
             System.out.println("2. Show top and bottom 5 students");
             System.out.println("3. Exit");
             System.out.print("Choose option: ");
-            option = scanner.nextInt();
+            if (scanner.hasNextInt()) {
+                option = scanner.nextInt();
+            } else {
+                System.out.println("WARNING: Invalid input. Please enter a number (1, 2 or 3).");
+                scanner.next();
+                continue;
+            }
             
             if(option == 1){
                 double threshold = 0.0;
