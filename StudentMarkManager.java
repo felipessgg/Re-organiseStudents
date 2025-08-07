@@ -97,8 +97,19 @@ public class StudentMarkManager {
             option = scanner.nextInt();
             
             if(option == 1){
-                System.out.println("Enter threshold: ");
-                double threshold = scanner.nextDouble();
+                double threshold = 0.0;
+                boolean validInput = false;
+                
+                while (!validInput) {
+                    System.out.print("Enter threshold: ");
+                    if (scanner.hasNextDouble()) {
+                        threshold = scanner.nextDouble();
+                        validInput = true;
+                    } else {
+                        System.out.println("WARNING: Invalid input. Please enter a numeric value");
+                        scanner.next();
+                    }
+                }
                 showBelowThreshold(students, threshold);
             } else if (option == 2){
                 showTopAndBottomFive(students);
