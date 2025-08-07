@@ -51,8 +51,11 @@ public class StudentMarkManager {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty() || line.startsWith("Unit") || line.startsWith("Last Name") || line.startsWith("#")) {
+                
+                if (line.trim().isEmpty() || line.startsWith("Last Name") || line.startsWith("#")) {
                     continue;
+                } else if (line.startsWith("Unit")){
+                    System.out.println(line);
                 }
 
                 String[] parts = line.split(",");
