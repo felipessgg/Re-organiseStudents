@@ -73,17 +73,41 @@ public class StudentMarkManager {
                 students.add(student);
             }
 
-            System.out.println("Students and total marks:\n");
+            /*System.out.println("Students and total marks:\n");
             for (Student s : students) {
                 s.printInfo();
-            }
-            
-            showBelowThreshold(students, 50);
-            showTopAndBottomFive(students);
+            }*/
 
         } catch (IOException e) {
             System.out.println("Error reading the file: " + e.getMessage());
         }
+        
+        Scanner scanner = new Scanner(System.in);
+        int option;
+        
+        do{
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Show students below threshold");
+            System.out.println("2. Show top and bottom 5 students");
+            System.out.println("3. Exit");
+            System.out.print("Choose option: ");
+            option = scanner.nextInt();
+            
+            if(option == 1){
+                System.out.println("Enter threshold: ");
+                double threshold = scanner.nextDouble();
+                showBelowThreshold(students, threshold);
+            } else if (option == 2){
+                showTopAndBottomFive(students);
+            } else if (option == 3){
+                System.out.println("Bye bye :) Have a good week!");
+            } else {
+                System.out.println("Invalid option.");
+            }
+            
+        } while (option != 3);
+        
+        scanner.close();
     }
 
     private static double parseMark(String mark) {
@@ -95,7 +119,7 @@ public class StudentMarkManager {
     }
     
     private static void showBelowThreshold(List<Student> students, double threshold){
-        System.out.println("\nStudents with total marks below" + threshold + ":\n");
+        System.out.println("\nStudents with total marks below " + threshold + ":\n");
         for (Student s : students){
             if(s.getTotal() < threshold){
                 s.printInfo();
