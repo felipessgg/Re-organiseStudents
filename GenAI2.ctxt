@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GenAI2
+comment1.params=name\ id\ m1\ m2\ m3
+comment1.target=Student(java.lang.String,\ java.lang.String,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ total()
+comment3.params=
+comment3.target=void\ print()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+comment5.params=arr\ i
+comment5.target=double\ parse(java.lang.String[],\ int)
+numComments=6
